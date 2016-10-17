@@ -22,7 +22,7 @@ def filter_words(words, skip_words):
 
 
 # removes punctuation
-def remove_punc(text):
+def remove_punct(text):
     no_punct = ""
     for char in text:
         if not (char in string.punctuation):
@@ -31,7 +31,7 @@ def remove_punc(text):
 
 
 # normalise inputv(filter the input, removes punctuation, removes spaces)
-def normalise_input(user_input):
+def normalise_inputs(user_input):
     no_punct = remove_punct(user_input).lower()
     rmv_space = ' '.join(no_punct.split())
     cnvrt_list= rmv_space.split()
