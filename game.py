@@ -1,4 +1,11 @@
 #This is the main game engine
+from normalise_input import normalise_inputs
+from player import *
+from map import *
+from enemy import *
+import time
+import random
+
 
 
 
@@ -44,7 +51,9 @@ def execute_go(direction):
     if direction in current_room["exits"].keys():
         new_position = current_room["exits"][direction]
         current_room = rooms[new_position]
-        print(rooms[new_position]["name"])
+
+        i = random.randrange(1,3)
+        current_room["description"] = descriptions[1]
     else:
         print("You cannot go there.")
 
@@ -54,7 +63,7 @@ def execute_go(direction):
 def menu(exits):
     print_menu(exits)
     user_input = input("> ")
-    normalised_user_input = normalise_input(user_input)
+    normalised_user_input = normalise_inputs(user_input)
     return normalised_user_input
 
 
@@ -62,3 +71,38 @@ def menu(exits):
 #example (move(rooms["Room1"]["exits"], "north")---> rooms["Room4"])
 def move(exits, direction):
     return rooms[exits[direction]]
+
+def execute_command(command):
+    """This function takes a command (a list of words as returned by
+    normalise_input) and, depending on the type of action (the first word of
+    the command: "go", "take", or "drop"), executes either execute_go,
+    execute_take, or execute_drop, supplying the second word as the argument.
+
+    """
+
+    if 0 == len(command):
+        return
+
+    if command[0] == "go":
+        if len(command) > 1:
+            execute_go(command[1])
+        else:
+            print("Go where?")
+
+
+def main():
+    # Main game loop
+	while True:
+	    # Display game status (room description, inventory etc.)
+	    print_room(current_room)
+	    input("continue...\n")
+
+	    # Show the menu with possible actions and ask the player
+	    command = menu(current_room["exits"])
+
+		# Execute the player's command
+	    execute_command(command)
+
+
+if __name__ == "__main__":
+	main()

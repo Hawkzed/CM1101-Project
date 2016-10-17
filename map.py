@@ -1,4 +1,7 @@
 #This contains the map information
+import random
+from player import *
+
 room_1 = {
     "name": "Room 1",
 	
@@ -146,6 +149,7 @@ rooms = {
     "Room 2": room_2,
     "Room 3": room_3,    
     "Room 4": room_4,
+<<<<<<< HEAD
 	"Room 5": room_5,
     "Room 6": room_6,
     "Room 7": room_7,    
@@ -160,4 +164,22 @@ rooms = {
     "Room 16": room_16,
 	"Room 17": room_17,
     "Room 18": room_18,
+=======
+}
+
+descriptions = {
+    1 : """
+    The door begrudgingly swings open and you
+    walk in, making sure to stay silent.
+    It's dark and a shiver runs down your spine
+    as you spy someone, or something, standing
+    in the middle of the room...
+    """,
+    2 : """
+    You slip in through the slightly ajar door
+    A musty, dank order creep into my nose. At first
+    it seems as there's nothing there but then,
+    you start hearing breathing that is not your own.
+    A shadow moves..."""
+>>>>>>> origin/master
 }
