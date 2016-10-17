@@ -82,6 +82,7 @@ room_11 = {
 
     "description":"There is an enemy here.",
 
+    "exits": {"north": "Room 15", "west": "Room 10", "east": "Room 12"}
 }
 room_12 = {
     "name": "Room 12",
