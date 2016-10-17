@@ -149,7 +149,6 @@ rooms = {
     "Room 2": room_2,
     "Room 3": room_3,    
     "Room 4": room_4,
-<<<<<<< HEAD
 	"Room 5": room_5,
     "Room 6": room_6,
     "Room 7": room_7,    
@@ -164,7 +163,6 @@ rooms = {
     "Room 16": room_16,
 	"Room 17": room_17,
     "Room 18": room_18,
-=======
 }
 
 descriptions = {
@@ -181,5 +179,4 @@ descriptions = {
     it seems as there's nothing there but then,
     you start hearing breathing that is not your own.
     A shadow moves..."""
->>>>>>> origin/master
 }
