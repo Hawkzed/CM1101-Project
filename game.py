@@ -1,4 +1,4 @@
-#This is the main game engine
+#This is the main game engine#This is the main game engine
 from normalise_input import normalise_inputs
 from player import *
 from map import *
@@ -171,21 +171,21 @@ def execute_command(command):
         else:
             print("Sell what?")
 
-
+    
 
 def main():
     # Main game loop
     while True:
-	# Display game status (room description, inventory etc.)
-	print_room(current_room)
-	input("continue...\n")
+    # Display game status (room description, inventory etc.)
+        print_room(current_room)
+        input("continue...\n")
 
-	# Show the menu with possible actions and ask the player
-	command = menu(current_room["exits"])
+    # Show the menu with possible actions and ask the player
+        command = menu(current_room["exits"])
 
-	# Execute the player's command
+    # Execute the player's command
         execute_command(command)
 
 
 if __name__ == "__main__":
-	main()
+    main()
