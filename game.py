@@ -32,20 +32,19 @@ def print_exit(direction, leads_to):
 
 
 # prints actions available to the player (add actions)
-def print_menu(exits):
+def print_menu(exits, room_items, inventory, room_stall):
     print("You can:")
     for direction in exits:
-        print_exit(direction, exit_leads_to(exits, direction)
-	for item in inventory:
-		print("DROP " + str(item["id"]).upper() + " to drop " + str(item["name"]) + ".")
-    for item in room_stall:
-		print("BUY " + str(item["id"].upper()) + " for " + str(item["cost"]) + " credits.")
+        print_exit(direction, exit_leads_to(exits, direction))
+    for item in inventory:
+        print("DROP " + str(item["id"]).upper() + " to drop " + str(item["name"]) + ".")
     if len(current_room["stall"]) > 0:
-		for item in inventory:
-			print("SELL " + str(item["id"]).upper() + " to sell and receive " + str(0.5*int(item["cost"])) " credits."
-	    
-		   
-	
+        for item in room_stall:
+            print("BUY " + str(item["id"].upper()) + " for " + str(item["cost"]) + " credits.")
+        for item in inventory:
+            print("SELL " + str(item["id"]).upper() + " to receive " + str(0.5*int(item["cost"])) + " credits.")
+    for item in room_items:
+        print("TAKE " + str(item["id"].upper() + " to take " + str(item["name"])))
     print("What do you want to do?")
 
 
@@ -113,8 +112,7 @@ def execute_sell(item_id):
             inventory.remove(item)
             credit = credit + int((0.5 * int(item["cost"])))
             current_room["stall"].append(item)
-            print("you have sold " + str(item["name"]) + " you have gained, " + str(
-            int(0.5 * item["cost"])) + " credits.")
+            print("you have sold " + str(item["name"]) + " you've gained, " + str(int(0.5*item["cost"])) + " credits.")
             print("you have " + str(credit) + " credits")
             # same thing as buy but the other way around, but only gives you half of the credits back
             break
