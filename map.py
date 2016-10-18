@@ -6,22 +6,21 @@ room_1 = {
     "name": "Room 1",
 	
 	"description":"There is an enemy here.",
-
+    "enemy": True,
     "exits": {"north": "Room 5"}
 }
 
 room_2 = {
     "name": "Room 2",
+    "enemy": True,
 
-	"description":
-    """
-    You enter the space station.
-    There is a chill in thr air.""",
+	"description":"There is an enemy here.",
 
     "exits": {"east": "Room 3"}
 }
 room_3 = {
     "name": "Room 3",
+    "enemy": True,
 
     "description":"There is an enemy here.",
 
@@ -29,6 +28,7 @@ room_3 = {
 }
 room_4 = {
     "name": "Room 4",
+    "enemy": False,
 
     "description":"There is treasure here.",
 
@@ -37,6 +37,7 @@ room_4 = {
 
 room_5 = {
     "name": "Room 5",
+    "enemy": True,
 
     "description":"There is an enemy here.",
 
@@ -45,6 +46,7 @@ room_5 = {
 
 room_6 = {
     "name": "Room 6",
+    "enemy": True,
 
     "description":"There is an enemy here.",
 
@@ -52,6 +54,7 @@ room_6 = {
 }
 room_7 = {
     "name": "Room 7",
+    "enemy": False,
 
     "description":"There is treasure here.",
 
@@ -59,6 +62,7 @@ room_7 = {
 }
 room_8 = {
     "name": "Room 8",
+    "enemy": True,
 
     "description":"There is an enemy here.",
 
@@ -67,6 +71,7 @@ room_8 = {
 
 room_9 = {
     "name": "Room 9",
+    "enemy": True,
 
     "description":"There is an enemy here.",
 
@@ -75,6 +80,7 @@ room_9 = {
 
 room_10 = {
     "name": "Room 10",
+    "enemy": True,
 
     "description":"There is an enemy here.",
 
@@ -82,6 +88,7 @@ room_10 = {
 }
 room_11 = {
     "name": "Room 11",
+    "enemy": True,
 
     "description":"There is an enemy here.",
 
@@ -89,6 +96,7 @@ room_11 = {
 }
 room_12 = {
     "name": "Room 12",
+    "enemy": True,
 
     "description":"There is an enemy here.",
 
@@ -97,6 +105,7 @@ room_12 = {
 
 room_13 = {
     "name": "Room 13",
+    "enemy": False,
 
     "description":"There are some survivors here.",
 
@@ -104,6 +113,7 @@ room_13 = {
 }
 room_14 = {
     "name": "Room 14",
+    "enemy": False,
 
     "description":"There is treasure here.",
 
@@ -112,6 +122,7 @@ room_14 = {
 
 room_15 = {
     "name": "Room 15",
+    "enemy": True,
 
     "description":"There is an enemy here.",
 
@@ -120,6 +131,7 @@ room_15 = {
 
 room_16 = {
     "name": "Room 15",
+    "enemy": True,
 
     "description":"There is an enemy here.",
 
@@ -128,6 +140,7 @@ room_16 = {
 
 room_17 = {
     "name": "Room 17",
+    "enemy": True,
 
     "description":"There is an enemy here.",
 
@@ -136,6 +149,7 @@ room_17 = {
 
 room_18 = {
     "name": "Room 18",
+    "enemy": True,
 
     "description":"There is despair here.",
 
