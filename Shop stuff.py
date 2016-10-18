@@ -44,9 +44,9 @@ def execute_sell(item_id):
     for item in inventory:
         if item_id == item["id"]: 
             inventory.remove(item)
-            gold = gold + int((0.5*int(item["cost"]))) 
+            credit = credit + int((0.5*int(item["cost"]))) 
             current_room["stall"].append(item)
-            print("you have sold " + str(item["name"]) + " you have gained, " + str(int(0.5*item["cost"]))) 
+            print("you have sold " + str(item["name"]) + " you have gained, " + str(int(0.5*item["cost"]) + " credits.") 
             print("you have " + str(credit) + " credits")
             #same thing as buy but the other way around, but only gives you half of the credits back
             break
