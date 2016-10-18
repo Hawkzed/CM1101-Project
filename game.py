@@ -102,16 +102,16 @@ def execute_command(command):
 
 def main():
     # Main game loop
-	while True:
-	    # Display game status (room description, inventory etc.)
-	    print_room(current_room)
-	    input("continue...\n")
+    while True:
+	# Display game status (room description, inventory etc.)
+	print_room(current_room)
+	input("continue...\n")
 
-	    # Show the menu with possible actions and ask the player
-	    command = menu(current_room["exits"])
+	# Show the menu with possible actions and ask the player
+	command = menu(current_room["exits"])
 
-		# Execute the player's command
-	    execute_command(command)
+	# Execute the player's command
+        execute_command(command)
 
 
 if __name__ == "__main__":
