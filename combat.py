@@ -1,17 +1,25 @@
 #	This module contains methods and functions for the combat system.
 import math
+import random
 from game import *
 from enemy import *
 from player import *
 
+#Enemy stats set to enemy pirate for now to test the code. Needs to be randomised by dificulty instead
+enemy_stats = enemy_pirate
+xpPoints = 0
 
 def battle():
+
+
+	print(enemy_stats["name"].upper(), "\n" + enemy_stats["description"], "\n")
 
 	""" The use of this function is to loop a battle encounter until one of 
 		the parties involved is dead. It gives the player their options and 
 		runs different functions depending on what they choose.
 
 	"""
+	global current_room
 	while player_stats["health"] > 0 and enemy_stats["health"] > 0:
 
 		print("What would you like to do? You can:")
@@ -19,6 +27,11 @@ def battle():
 		x = input("")
 		if x == "attack" or "Attack":
 			compute_turn_damage()
+
+	if enemy_stats["health"] < 1:
+		player_stats["gold"] + xpPoints
+		current_room["enemy"] = False
+		return
 
 def compute_turn_damage():
 	
@@ -49,7 +62,7 @@ def compute_experience(damage):
 		Tests are not available for this function since it uses randomised
 		variables in its operation.	"""
 
-	xpPoints = randint(0, (enemy_takes_damage*2))
+	xpPoints = random.randrange(0, (enemy_takes_damage*2))
 	return(xpPoints)
 
 def player_takes_damage(player, enemy):
@@ -65,7 +78,7 @@ def player_takes_damage(player, enemy):
 		Tests are not available for this function since it uses randomised
 		variables in its operation.	"""
 
-	damage = enemy["strength"] + randint(1, enemy["strength"])
+	damage = enemy["strength"] + random.randrange(1, enemy["strength"])
 	return(damage)
 
 
@@ -81,5 +94,5 @@ def enemy_takes_damage(player, enemy):
 		Tests are not available for this function since it uses randomised
 		variables in its operation.	"""
 
-	damage = player["strength"] + randint(1, weapons[player["weapon"]])
+	damage = player["strength"] + random.randrange(1, player["weapon"])
 	return(damage)
