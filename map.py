@@ -95,7 +95,7 @@ room_11 = {
     "enemy": True,
 	"stall":[],
     "description":"There is an enemy here.",
-
+	"items": [],
     "exits": {"north": "Room 15", "west": "Room 10", "east": "Room 12"}
 }
 room_12 = {
