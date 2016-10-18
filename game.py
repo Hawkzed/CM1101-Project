@@ -34,8 +34,15 @@ def print_exit(direction, leads_to):
 def print_menu(exits):
     print("You can:")
     for direction in exits:
-        print_exit(direction, exit_leads_to(exits, direction))
-
+        print_exit(direction, exit_leads_to(exits, direction)
+    for item in room_stall:
+		print("BUY " + str(item["id"].upper()) + " for " + str(item["cost"]) + " credits.")
+    if len(current_room["stall"]) > 0:
+		for item in inventory:
+			print("SELL " + str(item["id"]).upper() + " to sell and receive " + str(0.5*int(item["cost"])) " credits."
+	    
+		   
+	
     print("What do you want to do?")
 
 
