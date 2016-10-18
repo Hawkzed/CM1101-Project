@@ -5,13 +5,14 @@ from game import *
 from enemy import *
 from player import *
 
-#Enemy stats set to enemy pirate for now to test the code. Needs to be randomised by dificulty instead
-enemy_stats = enemy_pirate
+
 xpPoints = 0
 
 def battle():
 
-
+	#Enemy stats set to enemy pirate for now to test the code. Needs to be randomised by dificulty instead
+	global enemy_stats
+	enemy_stats = enemy_pirate
 	print(enemy_stats["name"].upper(), "\n" + enemy_stats["description"], "\n")
 
 	""" The use of this function is to loop a battle encounter until one of 
@@ -20,6 +21,7 @@ def battle():
 
 	"""
 	global current_room
+
 	while player_stats["health"] > 0 and enemy_stats["health"] > 0:
 
 		print("What would you like to do? You can:")
@@ -27,8 +29,8 @@ def battle():
 		x = input("")
 		if x == "attack" or "Attack":
 			compute_turn_damage()
-
 	if enemy_stats["health"] < 1:
+
 		player_stats["gold"] + xpPoints
 		current_room["enemy"] = False
 		return

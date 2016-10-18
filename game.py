@@ -1,5 +1,6 @@
 #This is the main game engine#This is the main game engine
 from normalise_input import normalise_inputs
+from combat import *
 from player import *
 from map import *
 from enemy import *
@@ -78,8 +79,9 @@ def execute_go(direction):
         new_position = current_room["exits"][direction]
         current_room = rooms[new_position]
 
-        i = random.randrange(1,3)
-        current_room["description"] = descriptions[1]
+        if current_room["name"] != "Shop":
+        	i = random.randrange(1,3)
+        	current_room["description"] = descriptions[1]
     else:
         print("You cannot go there.")
 
@@ -196,6 +198,8 @@ def main():
     # Display game status (room description, inventory etc.)
         print_room(current_room)
         input("continue...\n")
+        if current_room["enemy"] == True:
+        	battle()
 
     # Show the menu with possible actions and ask the player
         command = menu(current_room["exits"], current_room["items"], inventory, current_room["stall"])
