@@ -7,13 +7,15 @@ room_1 = {
 	"stall":[],
 	"description":"There is an enemy here.",
     "enemy": True,
+	"items": [],
     "exits": {"north": "Room 5"}
+
 }
 
 room_2 = {
     "name": "Room 2",
     "enemy": True,
-
+	"items": [],
 	"description":"There is an enemy here.",
 	
 	"stall":[],
@@ -24,18 +26,16 @@ room_3 = {
     "name": "Room 3",
     "enemy": True,
 	"stall":[],
-
     "description":"There is an enemy here.",
-
+	"items": [],
     "exits": {"west": "Room 2", "north": "Room 7"}
 }
 room_4 = {
     "name": "Room 4",
     "enemy": False,
 	"stall":[],
-
     "description":"There is treasure here.",
-
+	"items": [],
     "exits": {"north": "Room 8"}
 }
 
@@ -44,7 +44,7 @@ room_5 = {
     "enemy": True,
 	"stall":[],
     "description":"There is an enemy here.",
-
+	"items": [],
     "exits": {"north": "Room 10", "east": "Room 6", "south": "Room 1"}
 }
 
@@ -53,7 +53,7 @@ room_6 = {
     "enemy": True,
 	"stall":[],
     "description":"There is an enemy here.",
-
+	"items": [],
     "exits": {"west": "Room 5"}
 }
 room_7 = {
@@ -61,7 +61,7 @@ room_7 = {
     "enemy": False,
 	"stall":[],
     "description":"There is treasure here.",
-
+	"items": [],
     "exits": {"north": "Room 12", "south": "Room 3"}
 }
 room_8 = {
@@ -69,7 +69,7 @@ room_8 = {
     "enemy": True,
 	"stall":[],
     "description":"There is an enemy here.",
-
+	"items": [],
     "exits": {"north": "Room 13", "east": "Room 9", "south": "Room 4"}
 }
 
@@ -78,7 +78,7 @@ room_9 = {
     "enemy": True,
 	"stall":[],
     "description":"There is an enemy here.",
-
+	"items": [],
     "exits": {"east": "Room 10", "west": "Room 8"}
 }
 
@@ -87,7 +87,7 @@ room_10 = {
     "enemy": True,
 	"stall":[],
     "description":"There is an enemy here.",
-
+	"items": [],
     "exits": {"north": "Room 14", "west": "Room 9", "east": "Room 11", "south": "Room 5"}
 }
 room_11 = {
@@ -103,7 +103,7 @@ room_12 = {
     "enemy": True,
 	"stall":[],
     "description":"There is an enemy here.",
-
+	"items": [],
     "exits": {"south": "Room 7", "west": "Room 11", "north": "Room 16"}
 }
 
@@ -112,7 +112,7 @@ room_13 = {
     "enemy": False,
 	"stall":[],
     "description":"There are some survivors here.",
-
+	"items": [],
     "exits": {"south": "Room 8"}
 }
 room_14 = {
@@ -120,7 +120,7 @@ room_14 = {
     "enemy": False,
 	"stall":[],
     "description":"There is treasure here.",
-
+	"items": [],
     "exits": {"south": "Room 10"}
 }
 
@@ -129,7 +129,7 @@ room_15 = {
     "enemy": True,
 	"stall":[],
     "description":"There is an enemy here.",
-
+	"items": [],
     "exits": {"north": "Room 17", "east": "Room 16", "south": "Room 11"}
 }
 
@@ -138,7 +138,7 @@ room_16 = {
     "enemy": True,
 	"stall":[],
     "description":"There is an enemy here.",
-
+	"items": [],
     "exits": {"south": "Room 12", "west": "Room 15"}
 }
 
@@ -147,7 +147,7 @@ room_17 = {
     "enemy": True,
 	"stall":[],
     "description":"There is an enemy here.",
-
+	"items": [],
     "exits": {"north": "Room 18", "south": "Room 15"}
 }
 
@@ -156,6 +156,7 @@ room_18 = {
     "enemy": True,
 	"stall":[],
     "description":"There is despair here.",
+	"items": [],
     "exits": {"south": "Room 17"}
 }
 
@@ -164,6 +165,7 @@ room_shop = {
 	"enemy": False,
     "description": "A small robot stands behind a counter",
     "stall": [item_1, item_2, item_3]
+	"items": [],
 	"exits": {"east": "Room 3"}
 }			  
 
