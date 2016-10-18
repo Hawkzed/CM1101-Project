@@ -139,8 +139,8 @@ def execute_sell(item_id):
 
 #  prints the menu of actions using print_menu() function.
 #It then prompts the player to type an action. (add actions)
-def menu(exits):
-    print_menu(exits)
+def menu(exits, room_items, inventory, room_stall):
+    print_menu(exits, room_items, inventory, room_stall)
     user_input = input("> ")
     normalised_user_input = normalise_inputs(user_input)
     return normalised_user_input
