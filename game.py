@@ -3,6 +3,7 @@ from normalise_input import normalise_inputs
 from player import *
 from map import *
 from enemy import *
+from items import *
 import time
 import random
 
@@ -35,6 +36,8 @@ def print_menu(exits):
     print("You can:")
     for direction in exits:
         print_exit(direction, exit_leads_to(exits, direction)
+	for item in inventory:
+		print("DROP " + str(item["id"]).upper() + " to drop " + str(item["name"]) + ".")
     for item in room_stall:
 		print("BUY " + str(item["id"].upper()) + " for " + str(item["cost"]) + " credits.")
     if len(current_room["stall"]) > 0:
