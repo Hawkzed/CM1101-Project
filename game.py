@@ -19,6 +19,23 @@ def print_room(room):
     print()
 
 
+def item_list(items):
+    return ",".join(item["name"] for item in items)
+# returns the items as a a string
+
+    
+def print_room_items(room):
+    # tells the user which items are present in the room
+    if len(room["items"]) != 0:
+        print("There is " + str(item_list(room["items"])) + " here.")
+        print('')
+            
+
+def print_inv_items(items):
+    # Displays the player inventory
+    print("You have " + str(item_list(room["items"])) + ".")
+
+
 # takes a dictionary of exits and a direction returns the name of the exit it leads to
 # example ( exit_leads_to(rooms["Room1"]["exits"], "south"))
 def exit_leads_to(exits, direction):
