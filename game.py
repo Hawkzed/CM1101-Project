@@ -198,7 +198,7 @@ def main():
         input("continue...\n")
 
     # Show the menu with possible actions and ask the player
-        command = menu(current_room["exits"])
+        command = menu(current_room["exits"], current_room["items"], inventory, current_room["stall"])
 
     # Execute the player's command
         execute_command(command)
