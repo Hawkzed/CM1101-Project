@@ -121,7 +121,7 @@ def execute_buy(item_id):
 	for item in current_room["stall"]:
 		# searches the room for a stall dictionary
 		if item_id == item["id"]:
-			if credit > item["cost"]:
+			if player_stats["credits"] > item["cost"]:
 				# checks you have enough money
 				inventory.append(item)
 				current_room["stall"].remove(item)
