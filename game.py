@@ -58,6 +58,7 @@ def print_menu(exits, room_items, inventory, room_stall):
 		for item in room_stall:
 			print("BUY " + str(item["id"].upper()) + " to buy" + str(item["name"]) + " for " + str(item["cost"])
                   + " credits.")
+		print("RETIRE from the game!")
 		print("You have " + str(player_stats["credits"]) + " credits available.")
 	for item in room_items:
 		print("TAKE " + str(item["id"].upper() + " to take " + str(item["name"])))

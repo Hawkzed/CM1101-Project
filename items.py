@@ -22,4 +22,3 @@ item_4 = {
     "description": "All stats upgrade BEST VALUE!",
     "cost": 60
     }
-
