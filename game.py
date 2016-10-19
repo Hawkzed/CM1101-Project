@@ -247,7 +247,7 @@ FOR LIFE AND ETERNITY. \n
 		print_room(current_room)
 		input("continue...\n")
 		if current_room["type"] == "enemy" or current_room["type"] == "boss":
-			battle()
+			battle(current_room)
 			if player_stats["health"] < 1:
 				retire()
 	# Show the menu with possible actions and ask the player

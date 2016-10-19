@@ -10,11 +10,10 @@ from normalise_input import remove_punct
 
 xpPoints = 0
 
-def battle():
+def battle(current_room):
 
 	#Enemy stats set to enemy pirate for now to test the code. Needs to be randomised by dificulty instead
 	global enemy_stats
-	global current_room
 	
 	rand = random.randrange(1, 100)
 	
