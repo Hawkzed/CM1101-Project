@@ -1,7 +1,7 @@
 room_shop = {
     "name": "Shop",
     "description": "A small robot stands behind a counter",
-    "stall": [item_1, item_2, item_3]
+    "stall": [item_1, item_2, item_3, retire]
 
 }
 
