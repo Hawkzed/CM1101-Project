@@ -4,7 +4,7 @@ import random
 from game import *
 from enemy import *
 from player import *
-from normalise_input import normalise_inputs
+from normalise_input import remove_punct
 
 
 xpPoints = 0
@@ -30,8 +30,9 @@ def battle():
 		print("2. Attack 5 times")
 		print("3. Attack until dead")
 		x = input("")
-		x = normalise_inputs(x)
-		if x == "attack":
+		x = remove_punct(x).lower()
+		print(x)
+		if x == 'attack':
 			compute_turn_damage()
 		elif x == "attack 5 times":
 			for _ in " " * 5:
