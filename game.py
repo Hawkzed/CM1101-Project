@@ -199,7 +199,7 @@ def main():
         print_room(current_room)
         input("continue...\n")
         if current_room["enemy"] == True:
-        	battle()
+        	current_room["enemy"] = battle()
 
     # Show the menu with possible actions and ask the player
         command = menu(current_room["exits"], current_room["items"], inventory, current_room["stall"])

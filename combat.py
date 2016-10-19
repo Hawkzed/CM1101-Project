@@ -22,7 +22,7 @@ def battle():
 
 	"""
 	global current_room
-
+	escape = False
 	while (player_stats["health"] > 0 and enemy_stats["health"] > 0) or escape == True:
 
 		print("What would you like to do? You can:")
@@ -56,7 +56,9 @@ def battle():
 
 		player_stats["gold"] + xpPoints
 		current_room["enemy"] = False
-		return
+		return(False)
+	else:
+		return(True)
 
 def compute_turn_damage():
 	
