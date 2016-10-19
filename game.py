@@ -231,19 +231,29 @@ FOR LIFE AND ETERNITY. \n
 		input("continue...\n")
 		if current_room["type"] == "enemy":
 			battle()
-
+			if player_stats["health"] < 1:
+				retire()
 	# Show the menu with possible actions and ask the player
 		command = menu(current_room["exits"], current_room["items"], inventory, current_room["stall"])
-
 	# Execute the player's command
 		execute_command(command)
 
+
+
 def retire():
-	print("You have escaped from the ship, barely holding on to your life and your sanity.")
+	#Ends the game. Depending wether the player died or chose to retire, prints a different message and calculates/shows the final score.
+	#Add retire() to use. It will exit the program once done.
+
+	if player_stats["health"] > 0:
+		print("\nYou have escaped from the ship, barely holding on to your life and your sanity.\n")
+	else:
+		print("\nYou died fighting. While no one will remember you, you feel you have made a difference.\n")
+
 	print_player()
-	finalscore = player_stats["credits"] + player_stats["health"] + player_stats["strength"] + player_stats["defence"]
+	finalscore = player_stats["credits"] + player_stats["health"] + player_stats["strength"]*5 + player_stats["defence"]*5
 	print("Your final score is: %d" % (finalscore))
 	input("Please enter anything to end the game.")
 	exit()
+
 if __name__ == "__main__":
 	main()

@@ -1,8 +1,8 @@
 #This has the player information and stats
 from map import rooms
 current_room = rooms["Room 2"]
-player_stats = {"strength": 5,"defence": 5, "health": 100, "alive": True, "weapon":None, "credits": 50, "level": 1}
-weapons = {"stick": (10), None:(0), "knife":(15), "gun":(30)}
+player_stats = {"strength": 5,"defence": 5, "health": 100, "weapon":None, "credits": 50}
+weapons = {"stick": (15), None:(10), "knife":(20), "gun":(30)}
 inventory = []
 
 for key,value in inventory:
