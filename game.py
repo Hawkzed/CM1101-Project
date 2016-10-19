@@ -80,9 +80,20 @@ def execute_go(direction):
 		new_position = current_room["exits"][direction]
 		current_room = rooms[new_position]
 
+		#This checks the type of the room and randomises the description
+		#Check end of map.py file for all the decriptions in use along with their numbers
+
 		if current_room["name"] != "Shop":
-			i = random.randrange(1,3)
-			current_room["description"] = descriptions[1]
+			if current_room["type"] == "enemy":
+				i = random.randrange(1,3)
+			elif current_room["type"] == "empty":
+				i = random.randrange(4,6)
+			elif current_room["type"] == "loot":
+				i = random.randrange(7,9)
+			elif current_room["type"] == "boss":
+				i = 10
+
+			current_room["description"] = descriptions[i]
 	else:
 		print("You cannot go there.")
 
@@ -195,8 +206,8 @@ def main():
 	# Display game status (room description, inventory etc.)
 		print_room(current_room)
 		input("continue...\n")
-		if current_room["enemy"] == True:
-			current_room["enemy"] = battle()
+		if current_room["type"] == "enemy":
+			battle()
 
 	# Show the menu with possible actions and ask the player
 		command = menu(current_room["exits"], current_room["items"], inventory, current_room["stall"])

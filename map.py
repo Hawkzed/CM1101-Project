@@ -8,7 +8,7 @@ room_1 = {
     "name": "Room 1",
 	"stall":[],
 	"description":"There is an enemy here.",
-    "enemy": True,
+    "type": "enemy",
 	"items": [],
     "exits": {"north": "Room 5"}
 
@@ -16,7 +16,7 @@ room_1 = {
 
 room_2 = {
     "name": "Room 2",
-    "enemy": True,
+    "type": "enemy",
 	"items": [],
 	"description":"There is an enemy here.",
 	
@@ -26,7 +26,7 @@ room_2 = {
 }
 room_3 = {
     "name": "Room 3",
-    "enemy": True,
+    "type": "enemy",
 	"stall":[],
     "description":"There is an enemy here.",
 	"items": [],
@@ -34,7 +34,7 @@ room_3 = {
 }
 room_4 = {
     "name": "Room 4",
-    "enemy": False,
+    "type": "loot",
 	"stall":[],
     "description":"There is treasure here.",
 	"items": [],
@@ -43,7 +43,7 @@ room_4 = {
 
 room_5 = {
     "name": "Room 5",
-    "enemy": True,
+    "type": "enemy",
 	"stall":[],
     "description":"There is an enemy here.",
 	"items": [],
@@ -52,7 +52,7 @@ room_5 = {
 
 room_6 = {
     "name": "Room 6",
-    "enemy": True,
+    "type": "enemy",
 	"stall":[],
     "description":"There is an enemy here.",
 	"items": [],
@@ -60,7 +60,7 @@ room_6 = {
 }
 room_7 = {
     "name": "Room 7",
-    "enemy": False,
+    "type": "loot",
 	"stall":[],
     "description":"There is treasure here.",
 	"items": [],
@@ -68,7 +68,7 @@ room_7 = {
 }
 room_8 = {
     "name": "Room 8",
-    "enemy": True,
+    "enemy": "enemy",
 	"stall":[],
     "description":"There is an enemy here.",
 	"items": [],
@@ -77,7 +77,7 @@ room_8 = {
 
 room_9 = {
     "name": "Room 9",
-    "enemy": True,
+    "type": "enemy",
 	"stall":[],
     "description":"There is an enemy here.",
 	"items": [],
@@ -86,7 +86,7 @@ room_9 = {
 
 room_10 = {
     "name": "Room 10",
-    "enemy": True,
+    "type": "enemy",
 	"stall":[],
     "description":"There is an enemy here.",
 	"items": [],
@@ -94,7 +94,7 @@ room_10 = {
 }
 room_11 = {
     "name": "Room 11",
-    "enemy": True,
+    "type": "enemy",
 	"stall":[],
     "description":"There is an enemy here.",
 	"items": [],
@@ -102,7 +102,7 @@ room_11 = {
 }
 room_12 = {
     "name": "Room 12",
-    "enemy": True,
+    "type": "enemy",
 	"stall":[],
     "description":"There is an enemy here.",
 	"items": [],
@@ -111,7 +111,7 @@ room_12 = {
 
 room_13 = {
     "name": "Room 13",
-    "enemy": False,
+    "type": "civil",
 	"stall":[],
     "description":"There are some survivors here.",
 	"items": [],
@@ -119,7 +119,7 @@ room_13 = {
 }
 room_14 = {
     "name": "Room 14",
-    "enemy": False,
+    "type": "loot",
 	"stall":[],
     "description":"There is treasure here.",
 	"items": [],
@@ -128,7 +128,7 @@ room_14 = {
 
 room_15 = {
     "name": "Room 15",
-    "enemy": True,
+    "type": "enemy",
 	"stall":[],
     "description":"There is an enemy here.",
 	"items": [],
@@ -137,7 +137,7 @@ room_15 = {
 
 room_16 = {
     "name": "Room 15",
-    "enemy": True,
+    "type": "enemy",
 	"stall":[],
     "description":"There is an enemy here.",
 	"items": [],
@@ -146,7 +146,7 @@ room_16 = {
 
 room_17 = {
     "name": "Room 17",
-    "enemy": True,
+    "type": "enemy",
 	"stall":[],
     "description":"There is an enemy here.",
 	"items": [],
@@ -155,7 +155,7 @@ room_17 = {
 
 room_18 = {
     "name": "Room 18",
-    "enemy": True,
+    "type": "boss",
 	"stall":[],
     "description":"There is despair here.",
 	"items": [],
@@ -164,7 +164,7 @@ room_18 = {
 
 room_shop = {
     "name": "Shop",
-	"enemy": False,
+	"type": "shop",
     "description": "A small robot stands behind a counter",
     "stall": [item_1, item_2, item_3, item_4],
 	"items": [],
@@ -194,6 +194,7 @@ rooms = {
 }
 
 descriptions = {
+    # Enemy rooms
     1 : """
     The door begrudgingly swings open and you
     walk in, making sure to stay silent.
@@ -207,43 +208,59 @@ descriptions = {
     it seems as there's nothing there but then,
     you start hearing breathing that is not your own.
     A shadow moves...""",
+
     3: """
-    The gold glint in the corner of your eye instantly
-    catches your attention as you enter,
-    no lock, yet untouched,
-    precious resources may lie inside! """,
-
-    4 :""" Silence in here, 
-    all that remains are the screams of those once here,
-    just as the blackness of 
-    space... nothing is here... nothing.""",
-
-    5 :""" BOOM, BOOM, BOOM, 
-    you here the thud of terror aproach you!
-    it has awoken, it is fresh, 
-    unfortunately it is HUNGRY! """,
-
-    6: """ What approaches you is daunting,
+    What approaches you is daunting,
     its objective is cruel.
     if base could see you now,
     they would think you're a fool.""",
 
-    7: """ What happened here is unspeakable,
+    # Empty rooms
+    4 :""" 
+    Silence in here, 
+    all that remains are the screams of those once here,
+    just as the blackness of 
+    space... nothing is here... nothing.""",
+    
+    5: """ 
+    What happened here is unspeakable,
      limbs hanging from the ovehead wires.
      drip... drip... drip.""",
 
-    8: """ You enter only to find a room untouched,
+    6: """ 
+    You enter only to find a room untouched,
     this was once the dining room,
     where colleagues would come together to discuss reaserch and to enjoy conversation.
     Food still on the plate, water still in the cups.
     There had been an evacuation here.""",
 
-    9 :""" A light blinks in the corner, you go over to it, 
+
+    # Loot rooms
+
+    7 :""" 
+    A light blinks in the corner, you go over to it, 
     only to find it open.
     You look inside... a small fortune awaits you!
     Take it quickly, at least now you will die a rich man.""",
 
-    10 :""" The object in the corner is open,
+    8 :""" 
+    The object in the corner is open,
     inside there are weapons of dubious value.
-    Enjoy."""
+    Enjoy.""",
+
+    9: """
+    The gold glint in the corner of your eye instantly
+    catches your attention as you enter,
+    no lock, yet untouched,
+    precious resources may lie inside! """,
+
+
+    # Boss rooms
+
+    10 :""" 
+    BOOM, BOOM, BOOM, 
+    you here the thud of terror aproach you!
+    it has awoken, it is fresh, 
+    unfortunately it is HUNGRY! """
+
 }
