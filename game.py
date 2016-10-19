@@ -97,6 +97,23 @@ def execute_go(direction):
 	else:
 		print("You cannot go there.")
 
+	for line in inventory:
+		if line["id"] == "1":
+			player_stats["strength"] += 5
+			inventory.remove(line)
+		elif value["id"] == "2":
+			player_stats["defence"] += 5
+			inventory.remove(line)
+		elif value["id"] == "3":
+			player_stats["health"] += 25
+			inventory.remove(line)
+		elif value["id"] == "4":
+			player_stats["strength"] += 5
+			player_stats["defence"] += 5
+			player_stats["health"] += 50
+			inventory.remove(line)
+
+
 def execute_drop(item_id):
 	for item in inventory:
 		if item_id == item["id"]:
