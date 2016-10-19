@@ -1,8 +1,7 @@
-3 """
-The gold glint in the corner of your eye instantly
+3 """The gold glint in the corner of your eye instantly
 catches your attention as you enter,
 no lock, yet untouched,
-precious resources may lie inside! """
+precious resources may lie inside!"""
 
 4 """ Silence in here, 
 all that remains are the screams of those once here,
