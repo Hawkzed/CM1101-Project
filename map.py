@@ -195,16 +195,14 @@ rooms = {
 
 descriptions = {
     # Enemy rooms
-    1 : """
-    The door begrudgingly swings open and you
+   """The door begrudgingly swings open and you
     walk in, making sure to stay silent.
     It's dark and a shiver runs down your spine
     as you spy someone, or something, standing
-    in the middle of the room...
-    """,
+    in the middle of the room...""",
     2 : """
     You slip in through the slightly ajar door
-    A musty, dank order creep into my nose. At first
+    A musty, dank odor creeps into my nose. At first
     it seems as there's nothing there but then,
     you start hearing breathing that is not your own.
     A shadow moves...""",
@@ -215,40 +213,45 @@ descriptions = {
     if base could see you now,
     they would think you're a fool.""",
 
+    4: """
+    You walk in and a figure latches onto your chest, slamming you to the floor.
+    With the wind knocked out of you, it is a struggle to get up. You dont have long.
+    They are comming back for more!
+    """,
     # Empty rooms
-    4 :""" 
+    5 :""" 
     Silence in here, 
     all that remains are the screams of those once here,
     just as the blackness of 
     space... nothing is here... nothing.""",
     
-    5: """ 
+    6: """ 
     What happened here is unspeakable,
-     limbs hanging from the ovehead wires.
+     limbs hanging from the overhead wires.
      drip... drip... drip.""",
 
-    6: """ 
+    7: """ 
     You enter only to find a room untouched,
     this was once the dining room,
-    where colleagues would come together to discuss reaserch and to enjoy conversation.
+    where colleagues would come together to discuss research and to enjoy conversation.
     Food still on the plate, water still in the cups.
     There had been an evacuation here.""",
 
 
     # Loot rooms
 
-    7 :""" 
+    8:""" 
     A light blinks in the corner, you go over to it, 
     only to find it open.
     You look inside... a small fortune awaits you!
     Take it quickly, at least now you will die a rich man.""",
 
-    8 :""" 
+    9 :""" 
     The object in the corner is open,
     inside there are weapons of dubious value.
     Enjoy.""",
 
-    9: """
+    10: """
     The gold glint in the corner of your eye instantly
     catches your attention as you enter,
     no lock, yet untouched,
@@ -257,10 +260,48 @@ descriptions = {
 
     # Boss rooms
 
-    10 :""" 
+    11: """ 
     BOOM, BOOM, BOOM, 
-    you here the thud of terror aproach you!
+    you here the thud of terror approach you!
     it has awoken, it is fresh, 
-    unfortunately it is HUNGRY! """
+    unfortunately it is HUNGRY! """,
 
-}
+    # surviver rooms
+
+    12: """
+    The carbon fibre roof has collapsed, 
+    a hand badly gashed is extended from underneath the rubble,
+    faint breathing can be heard, they were alive. Barely alive.
+    You pull them out.
+
+    
+    The survivor has been sent to the ship.
+
+    """,
+    13: """
+    The doors slide open to reveal a figure curled up in the corner of the living quarters, 
+    they are shaking.
+    As you approach they squeal: 
+    "kill me, let me join my crew, my friends."
+    You let out a hand and lift the young shattered woman to her feet.
+    "Not today" you reply.    
+
+    The survivor has been sent to the ship.
+
+    """,
+
+    14: """ 
+    On entry a gun is drawn to your head. A voice shouts 
+    "Look ahead otherwise you’ll have the same fate as them."
+    pointing at a pile of space pirates mangled bodies and synthetic extensions.
+    "Do I look like I’m with them?" you reply calmly.
+    "No I, I suppose not"
+    "Good, well now that’s been cleared up, 
+    time to get the hell out of here, go to my ship,
+    I won’t be long!." 
+
+
+    The survivor has been sent to the ship.
+    
+    """,
+    }
