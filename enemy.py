@@ -4,7 +4,7 @@ enemy_stats = {}
 p_basic = {
 "strength": 2, 
 "defence": 10, 
-"health": 100,  
+"health": 40,  
 "alive": True,  
 "attack":(5,10),
 "name":"Space Pirate", 
@@ -16,9 +16,9 @@ Their lack of humanity makes them sluggish and as such they don't hit hard."""
 }
 
 p_superior = {
-"strength": 2, 
+"strength": 5, 
 "defence": 15, 
-"health": 100,  
+"health": 60,  
 "alive": True,  
 "attack":(5,10),
 "name":"Pirate Corsair", 
@@ -30,9 +30,9 @@ and earn a promotion."""
 }
 
 p_elite = {
-"strength": 2, 
+"strength": 6, 
 "defence": 20, 
-"health": 100,  
+"health": 80,  
 "alive": True,  
 "attack":(5,10),
 "name":"Pirate Armsman", 
@@ -47,7 +47,7 @@ can only take their rage out on their victims, or you for that matter."""
 p_boss = {
 "strength": 20, 
 "defence": 20, 
-"health": 100,  
+"health": 200,  
 "alive": True,  
 "attack":(5,10),
 "name":"Pirate Lord", 

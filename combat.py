@@ -20,16 +20,16 @@ def battle():
 	
 	if rand >= 90:
 		enemy_stats = enemy_pirate_armsman
-		enemy_stats["health"] = 100
+		enemy_stats["health"] = 40
 	elif rand >= 70 and rand < 90:
 		enemy_stats = enemy_pirate_corsair
-		enemy_stats["health"] = 100
+		enemy_stats["health"] = 60
 	elif rand < 70:
 		enemy_stats = enemy_pirate
-		enemy_stats["health"] = 100
+		enemy_stats["health"] = 80
 	elif current_room["type"] == "boss":
 		enemy_stats = enemy_pirate_ravager
-		enemy_stats["health"] = 100
+		enemy_stats["health"] = 200
 	
 	print(enemy_stats["name"].upper(), "\n" + enemy_stats["description"], "\n")
 
