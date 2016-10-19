@@ -54,13 +54,10 @@ def print_menu(exits, room_items, inventory, room_stall):
 	print("You can:")
 	for direction in exits:
 		print_exit(direction, exit_leads_to(exits, direction))
-	for item in inventory:
-		print("DROP " + str(item["id"]).upper() + " to drop " + str(item["name"]) + ".")
 	if len(current_room["stall"]) > 0:
 		for item in room_stall:
-			print("BUY " + str(item["id"].upper()) + " for " + str(item["cost"]) + " credits.")
-		for item in inventory:
-			print("SELL " + str(item["id"]).upper() + " to receive " + str(0.5*int(item["cost"])) + " credits.")
+			print("BUY " + str(item["id"].upper()) + " to buy" + str(item["name"]) + " for " + str(item["cost"])
+                  + " credits.")
 		print("You have " + str(player_stats["credits"]) + " credits available.")
 	for item in room_items:
 		print("TAKE " + str(item["id"].upper() + " to take " + str(item["name"])))
@@ -117,39 +114,42 @@ def execute_take(item_id):
 		else:
 			print("You cannot take that.")
 
-def execute_buy(item_id):
-	for item in current_room["stall"]:
-		# searches the room for a stall dictionary
-		if item_id == item["id"]:
-			if player_stats["credits"] > item["cost"]:
-				# checks you have enough money
-				inventory.append(item)
-				current_room["stall"].remove(item)
-				player["credits"] = player["credits"] - item["cost"]
-				# adds the item to your inv and then changes your credits
-				print("you have bought " + str(item["name"]))
-				print("you have " + str(player["credits"]) + " credits")
-				break
-			else:
-				print("You do not have enough credits")
+def execute_buy(user_input):
+    if user_input == "1":
+        if player_stats["credits"] > item_1["cost"]:
+            inventory.append(item_1)
+            player_stats["credits"] = int(player_stats["credits"]) - int(item_1["cost"])
+        else:
+            print("You do not have enough credits")
+    elif user_input == "2":
+        if player_stats["credits"] > item_2["cost"]:
+            inventory.append(item_2)
+            player_stats["credits"] = int(player_stats["credits"]) - int(item_2["cost"])
+        else:
+            print("You do not have enough credits")
+    elif user_input == "3":
+        if player_stats["credits"] > item_3["cost"]:
+            inventory.append(item_3)
+            player_stats["credits"] = int(player_stats["credits"]) - int(item_3["cost"])
+        else:
+            print("You do not have enough credits")
+    elif user_input == "4":
+        if player_stats["credits"] > item_4["cost"]:
+            inventory.append(item_4)
+            player_stats["credits"] = int(player_stats["credits"]) - int(item_4["cost"])
+        else:
+            print("You do not have enough credits")
 
-def execute_sell(item_id):
-	for item in inventory:
-		if item_id == item["id"]:
-			inventory.remove(item)
-			player["credits"] = player["credits"] + int((0.5 * int(item["cost"])))
-			current_room["stall"].append(item)
-			print("you have sold " + str(item["name"]) + " you've gained, " + str(int(0.5*item["cost"])) + " credits.")
-			print("you have " + str(player["credits"]) + " credits")
-			# same thing as buy but the other way around, but only gives you half of the credits back
-			break
-		else:
-			print("You cannot sell that")
 
 
 #  prints the menu of actions using print_menu() function.
 #It then prompts the player to type an action. (add actions)
 def menu(exits, room_items, inventory, room_stall):
+	if current_room["type"] == "loot":
+		print("You received 50 credits\n")
+		player_stats["credits"] += 50
+		current_room["type"] = "empty"
+
 	print_menu(exits, room_items, inventory, room_stall)
 	user_input = input("> ")
 	normalised_user_input = normalise_inputs(user_input)
@@ -192,11 +192,6 @@ def execute_command(command):
 			execute_buy(command[1])
 		else:
 			print("Buy what?")
-	elif command[0] == "sell":
-		if len(command) > 1:
-			execute_sell(command[1])
-		else:
-			print("Sell what?")
 
 	
 
