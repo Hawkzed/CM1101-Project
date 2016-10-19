@@ -71,8 +71,7 @@ def battle():
 				compute_enemy_damage()
 
 	if enemy_stats["health"] < 1:
-
-		player_stats["credits"] + xpPoints
+		player_stats["credits"] += 10
 		current_room["type"] = "empty"
 		return(False)
 	else:
