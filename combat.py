@@ -32,17 +32,17 @@ def battle():
 		print("4. Escape")
 		x = input("")
 		x = remove_punct(x).lower()
-		if x == 'attack':
+		if x == 'attack' or x == "1":
 			compute_turn_damage()
-		elif x == "attack 5 times":
+		elif x == "attack 5 times" or x == "1":
 			for _ in " " * 5:
 				compute_turn_damage()
 				if player_stats["health"] > 0 or enemy_stats["health"] > 0:
 					break
-		elif x == "attack until dead":
+		elif x == "attack until dead" or x == "1":
 			while player_stats["health"] > 0 and enemy_stats["health"] > 0:
 				compute_turn_damage()
-		elif x == "escape":
+		elif x == "escape" or x == "1":
 			escapeChance = escape_dependent_on_health(player_stats)
 			escape = escape_likelyhood(escapeChance)
 			if escape == True:
