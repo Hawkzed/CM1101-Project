@@ -13,7 +13,7 @@ def battle():
 
 	#Enemy stats set to enemy pirate for now to test the code. Needs to be randomised by dificulty instead
 	global enemy_stats
-	enemy_stats = enemy_pirate
+	enemy_stats = enemy_pirate_armsman
 	print(enemy_stats["name"].upper(), "\n" + enemy_stats["description"], "\n")
 
 	""" The use of this function is to loop a battle encounter until one of 
@@ -54,7 +54,7 @@ def battle():
 
 	if enemy_stats["health"] < 1:
 
-		player_stats["gold"] + xpPoints
+		player_stats["credits"] + xpPoints
 		current_room["enemy"] = False
 		return(False)
 	else:
