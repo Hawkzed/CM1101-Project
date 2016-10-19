@@ -14,7 +14,19 @@ def battle():
 
 	#Enemy stats set to enemy pirate for now to test the code. Needs to be randomised by dificulty instead
 	global enemy_stats
-	enemy_stats = enemy_pirate_armsman
+	global current_room
+	
+	rand = random.randrange(1, 100)
+	
+	if rand >= 90:
+		enemy_stats = enemy_pirate_armsman
+	elif rand >= 70 and rand < 90:
+		enemy_stats = enemy_pirate_corsair
+	elif rand < 70:
+		enemy_stats = enemy_pirate
+	elif current_room["type"] == "boss":
+		enemy_stats = enemy_pirate_ravager
+	
 	print(enemy_stats["name"].upper(), "\n" + enemy_stats["description"], "\n")
 
 	""" The use of this function is to loop a battle encounter until one of 
@@ -22,7 +34,6 @@ def battle():
 		runs different functions depending on what they choose.
 
 	"""
-	global current_room
 	escape = False
 	while (player_stats["health"] > 0 and enemy_stats["health"] > 0) or escape == True:
 
