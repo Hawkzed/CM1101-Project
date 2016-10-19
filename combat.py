@@ -39,7 +39,7 @@ def battle():
 			for _ in " " * 5:
 				compute_turn_damage()
 				time.sleep(0.5)
-				if player_stats["health"] > 0 or enemy_stats["health"] > 0:
+				if player_stats["health"] < 0 or enemy_stats["health"] < 0:
 					break
 		elif x == "attack until dead" or x == "3":
 			while player_stats["health"] > 0 and enemy_stats["health"] > 0:
