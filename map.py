@@ -195,7 +195,8 @@ rooms = {
 
 descriptions = {
     # Enemy rooms
-   """The door begrudgingly swings open and you
+    1:"""
+    The door begrudgingly swings open and you
     walk in, making sure to stay silent.
     It's dark and a shiver runs down your spine
     as you spy someone, or something, standing
