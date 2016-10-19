@@ -89,6 +89,8 @@ def execute_go(direction):
 				i = random.randrange(7,9)
 			elif current_room["type"] == "boss":
 				i = 10
+			elif current_room["type"] == "civil":
+				i = random.randrange(11,12)
 
 			current_room["description"] = descriptions[i]
 	else:
@@ -202,7 +204,6 @@ def execute_command(command):
 def main():
 	# Main game loop
 	print("""  
-
 OUT IN THE DEPTHS OF SPACE. A STATION STRANDED. 
 IT HAS BEEN ATTACKED BY THREE FACTIONS HELLBENT ON DESTROYING THE HUMAN RACE. 
 THEY DONT BELIEVE IN OUR VALUES OR VIRTUES.
@@ -221,7 +222,6 @@ YOUR MISSION, SHOULD YOU ACCEPT IT:
 GOOD LUCK CAPTAIN.
 
 FOR LIFE AND ETERNITY. \n
-
 """)
 	input("continue... \n")
 	while True:
