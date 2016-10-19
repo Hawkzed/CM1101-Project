@@ -73,6 +73,10 @@ enemy_pirate_corsair = p_superior
 enemy_pirate_armsman = p_elite
 enemy_pirate_ravager = p_boss
 
+p_basic["health"] = 100
+p_superior["health"] = 100
+p_elite["health"] = 100
+p_boss["health"] = 100
 
 
 a_basic = {
