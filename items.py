@@ -13,8 +13,8 @@ item_2 = {
 item_3 = {
     "name": " Health Upgrade",
     "id": "3",
-    "description": "A +10 to health upgrade",
-    "cost": 25
+    "description": " +25 to health",
+    "cost": 20
     }
 item_4 = {
     "name": " All Stats Upgrade",

@@ -10,8 +10,8 @@ for key,value in inventory:
 	elif value["id"] == "2":
 		player_stats["defence"] += 5
 	elif value["id"] == "3":
-		player_stats["health"] += 5
+		player_stats["health"] += 25
 	elif value["id"] == "4":
 		player_stats["strength"] += 5
 		player_stats["defence"] += 5
-		player_stats["health"] += 5
+		player_stats["health"] += 50
