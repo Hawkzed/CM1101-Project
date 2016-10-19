@@ -241,7 +241,7 @@ FOR LIFE AND ETERNITY. \n
 def retire():
 	print("You have escaped from the ship, barely holding on to your life and your sanity.")
 	print_player()
-	finalscore = player_stats["credits"]
+	finalscore = player_stats["credits"] + player_stats["health"] + player_stats["strength"] + player_stats["defence"]
 	print("Your final score is: %d" % (finalscore))
 	input("Please enter anything to end the game.")
 	exit()
