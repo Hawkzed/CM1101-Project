@@ -25,10 +25,23 @@ def battle():
 	while player_stats["health"] > 0 and enemy_stats["health"] > 0:
 
 		print("What would you like to do? You can:")
-		print("Attack")
+		print("1. Attack")
+		print("2. Attack 5 times")
+		print("3. Attack until dead")
+
 		x = input("")
-		if x == "attack" or "Attack":
+		if x == "attack":
 			compute_turn_damage()
+		elif x == "attack 5 times":
+			for _ in " " * 5:
+				compute_turn_damage()
+				if player_stats["health"] > 0 or enemy_stats["health"] > 0:
+					break
+		elif x == "attack until dead":
+			while player_stats["health"] > 0 and enemy_stats["health"] > 0:
+				compute_turn_damage() 
+
+
 	if enemy_stats["health"] < 1:
 
 		player_stats["gold"] + xpPoints
