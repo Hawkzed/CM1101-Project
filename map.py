@@ -195,12 +195,13 @@ rooms = {
 
 descriptions = {
     # Enemy rooms
-   """The door begrudgingly swings open and you
+	
+	1: """The door begrudgingly swings open and you
     walk in, making sure to stay silent.
     It's dark and a shiver runs down your spine
     as you spy someone, or something, standing
     in the middle of the room...""",
-    2 : """
+    2: """
     You slip in through the slightly ajar door
     A musty, dank odor creeps into my nose. At first
     it seems as there's nothing there but then,
