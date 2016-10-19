@@ -55,7 +55,7 @@ def battle():
 	if enemy_stats["health"] < 1:
 
 		player_stats["credits"] + xpPoints
-		current_room["enemy"] = False
+		current_room["type"] = "empty"
 		return(False)
 	else:
 		return(True)
