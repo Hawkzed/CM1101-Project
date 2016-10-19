@@ -150,6 +150,11 @@ def execute_sell(item_id):
 #  prints the menu of actions using print_menu() function.
 #It then prompts the player to type an action. (add actions)
 def menu(exits, room_items, inventory, room_stall):
+	if current_room["type"] == "loot":
+		print("You received 50 credits\n")
+		player_stats["credits"] += 50
+		current_room["type"] = "empty"
+
 	print_menu(exits, room_items, inventory, room_stall)
 	user_input = input("> ")
 	normalised_user_input = normalise_inputs(user_input)
