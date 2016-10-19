@@ -23,15 +23,15 @@ def battle():
 	"""
 	global current_room
 
-	while player_stats["health"] > 0 and enemy_stats["health"] > 0:
+	while (player_stats["health"] > 0 and enemy_stats["health"] > 0) or escape == True:
 
 		print("What would you like to do? You can:")
 		print("1. Attack")
 		print("2. Attack 5 times")
 		print("3. Attack until dead")
+		print("4. Escape")
 		x = input("")
 		x = remove_punct(x).lower()
-		print(x)
 		if x == 'attack':
 			compute_turn_damage()
 		elif x == "attack 5 times":
@@ -41,8 +41,15 @@ def battle():
 					break
 		elif x == "attack until dead":
 			while player_stats["health"] > 0 and enemy_stats["health"] > 0:
-				compute_turn_damage() 
-
+				compute_turn_damage()
+		elif x == "escape":
+			escapeChance = escape_dependent_on_health(player_stats)
+			escape = escape_likelyhood(escapeChance)
+			if escape == True:
+				print("You escape the room successfully")
+				break
+			else:
+				print("you must STAND and FIGHT!") # or print nothing and continue fighting			
 
 	if enemy_stats["health"] < 1:
 
@@ -115,15 +122,14 @@ def enemy_takes_damage(player, enemy):
 	return(damage)
 	
 def escape_dependent_on_health(player_stats):
-	for i in player_stats["health"]:
-		if i >= 75:
-			chance_of_escape = 60
-		
-		elif i >= 50:
-			chance_of_escape = 40
-		
-		else:
-			chance_of_escape = 20
+	if player_stats["health"] >= 75:
+		chance_of_escape = 60
+	
+	elif player_stats["health"] >= 50:
+		chance_of_escape = 40
+	
+	else:
+		chance_of_escape = 20
 			
 	return (chance_of_escape)
 
