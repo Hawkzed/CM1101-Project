@@ -49,7 +49,8 @@ def battle():
 				print("You escape the room successfully")
 				break
 			else:
-				print("you must STAND and FIGHT!") # or print nothing and continue fighting			
+				print("you must STAND and FIGHT!") # or print nothing and continue fighting
+				compute_enemy_damage()
 
 	if enemy_stats["health"] < 1:
 
@@ -74,6 +75,22 @@ def compute_turn_damage():
 	player_stats["health"] -= player_incre
 	enemy_stats["health"] -= enemy_incre
 	print("The player deals %d damage to the enemy, leaving it at %d health!" % (enemy_incre, enemy_stats["health"]))
+	print("The enemy deals %d damage to the player, leaving them at %d health!" % (player_incre, player_stats["health"]))
+	
+def compute_enemy_damage():
+	
+	""" The use of this function is to calculate the events of a turn 
+		where the player attacks the enemy. It calculates how much
+		damage is dealt to the player and the enemy	that they are fighting,
+		and awards experience to the player	accordingly. It then prints
+		the events of that turn.
+		
+		Tests are not available for this function since it uses randomised
+		variables in its operation. """
+
+	player_incre = player_takes_damage(player_stats, enemy_stats)
+	
+	player_stats["health"] -= player_incre
 	print("The enemy deals %d damage to the player, leaving them at %d health!" % (player_incre, player_stats["health"]))
 
 def compute_experience(damage):
