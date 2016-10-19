@@ -1,6 +1,7 @@
 #	This module contains methods and functions for the combat system.
 import math
 import random
+import time
 from game import *
 from enemy import *
 from player import *
@@ -31,18 +32,20 @@ def battle():
 		print("3. Attack until dead")
 		print("4. Escape")
 		x = input("")
-		x = remove_punct(x).lower()
+		x = remove_punct(x).lower().strip()
 		if x == 'attack' or x == "1":
 			compute_turn_damage()
-		elif x == "attack 5 times" or x == "1":
+		elif x == "attack 5 times" or x == "2":
 			for _ in " " * 5:
 				compute_turn_damage()
+				time.sleep(0.5)
 				if player_stats["health"] > 0 or enemy_stats["health"] > 0:
 					break
-		elif x == "attack until dead" or x == "1":
+		elif x == "attack until dead" or x == "3":
 			while player_stats["health"] > 0 and enemy_stats["health"] > 0:
 				compute_turn_damage()
-		elif x == "escape" or x == "1":
+				time.sleep(0.5)
+		elif x == "escape" or x == "4":
 			escapeChance = escape_dependent_on_health(player_stats)
 			escape = escape_likelyhood(escapeChance)
 			if escape == True:
