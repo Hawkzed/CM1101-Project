@@ -58,10 +58,7 @@ def print_menu(exits, room_items, inventory, room_stall):
 		for item in room_stall:
 			print("BUY " + str(item["id"].upper()) + " to buy" + str(item["name"]) + " for " + str(item["cost"])
                   + " credits.")
-<<<<<<< HEAD
 		print("BUY RETIRE to retire from the game!")
-=======
->>>>>>> 128a80ae1628a8e92bcb25e2ff0f2c2c8c8284b8
 		print("You have " + str(player_stats["credits"]) + " credits available.")
 	for item in room_items:
 		print("TAKE " + str(item["id"].upper() + " to take " + str(item["name"])))
@@ -121,7 +118,6 @@ def execute_take(item_id):
 			print("You cannot take that.")
 
 def execute_buy(user_input):
-<<<<<<< HEAD
     if user_input == "1":
         if player_stats["credits"] >= item_1["cost"]:
             inventory.append(item_1)
@@ -148,37 +144,6 @@ def execute_buy(user_input):
             print("You do not have enough credits")
     elif user_input == "retire":
     	retire()
-
-=======
-	if user_input == "1":
-		if player_stats["credits"] >= item_1["cost"]:
-			inventory.append(item_1)
-			player_stats["credits"] = int(player_stats["credits"]) - int(item_1["cost"])
-			print("You have bought " + item_1["name"])
-		else:
-			print("You do not have enough credits")
-	elif user_input == "2":
-		if player_stats["credits"] >= item_2["cost"]:
-			inventory.append(item_2)
-			player_stats["credits"] = int(player_stats["credits"]) - int(item_2["cost"])
-			print("You have bought " + item_2["name"])
-		else:
-			print("You do not have enough credits")
-	elif user_input == "3":
-		if player_stats["credits"] >= item_3["cost"]:
-			inventory.append(item_3)
-			player_stats["credits"] = int(player_stats["credits"]) - int(item_3["cost"])
-			print("You have bought " + item_3["name"])
-		else:
-			print("You do not have enough credits")
-	elif user_input == "4":
-		if player_stats["credits"] >= item_4["cost"]:
-			inventory.append(item_4)
-			player_stats["credits"] = int(player_stats["credits"]) - int(item_4["cost"])
-			print("You have bought " + item_4["name"])
-		else:
-			print("You do not have enough credits")
->>>>>>> 128a80ae1628a8e92bcb25e2ff0f2c2c8c8284b8
 
 
 
