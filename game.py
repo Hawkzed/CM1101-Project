@@ -58,7 +58,7 @@ def print_menu(exits, room_items, inventory, room_stall):
 		for item in room_stall:
 			print("BUY " + str(item["id"].upper()) + " to buy" + str(item["name"]) + " for " + str(item["cost"])
                   + " credits.")
-		print("RETIRE from the game!")
+		print("BUY RETIRE to retire from the game!")
 		print("You have " + str(player_stats["credits"]) + " credits available.")
 	for item in room_items:
 		print("TAKE " + str(item["id"].upper() + " to take " + str(item["name"])))
@@ -140,6 +140,9 @@ def execute_buy(user_input):
             player_stats["credits"] = int(player_stats["credits"]) - int(item_4["cost"])
         else:
             print("You do not have enough credits")
+    elif user_input == "retire":
+    	retire()
+
 
 
 
@@ -194,7 +197,9 @@ def execute_command(command):
 		else:
 			print("Buy what?")
 
-	
+def print_player():
+	for x in player_stats:
+		print(x, ": ", player_stats[x])
 
 def main():
 	# Main game loop
@@ -211,6 +216,12 @@ def main():
 	# Execute the player's command
 		execute_command(command)
 
-
+def retire():
+	print("You have escaped from the ship, barely holding on to your life and your sanity.")
+	print_player()
+	finalscore = player_stats["credits"]
+	print("Your final score is: %d" % (finalscore))
+	input("Please enter anything to end the game.")
+	exit()
 if __name__ == "__main__":
 	main()
