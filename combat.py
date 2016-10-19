@@ -4,6 +4,7 @@ import random
 from game import *
 from enemy import *
 from player import *
+from normalise_input import normalise_inputs
 
 
 xpPoints = 0
@@ -26,9 +27,18 @@ def battle():
 
 		print("What would you like to do? You can:")
 		print("Attack")
+		print("Escape")
 		x = input("")
+		x = normalise_inputs(x)
 		if x == "attack" or "Attack":
 			compute_turn_damage()
+		elif x == "escape" or "run":
+			escapeChance = escape_dependent_on_health(player_stats["health"])
+			if escape_likelyhood(escapeChance) == True:
+			#print("code to move room")/ current_room = move(exits, direction) # if it stays the same as that in the template
+				print("You escaped!")
+			elif escape_likelyhood() == False:
+				print("you must STAND and FIGHT!") # or print nothing and continue fighting
 	if enemy_stats["health"] < 1:
 
 		player_stats["gold"] + xpPoints
@@ -98,3 +108,31 @@ def enemy_takes_damage(player, enemy):
 
 	damage = player["strength"] + random.randrange(1, player["weapon"])
 	return(damage)
+	
+def escape_dependent_on_health(player_stats):
+	for i in player_stats["health"]:
+		if i >= 75:
+			chance_of_escape = 60
+		
+		elif i >= 50:
+			chance_of_escape = 40
+		
+		else:
+			chance_of_escape = 20
+			
+	return (chance_of_escape)
+
+# statement for returning player_escape function which will then move Player to other room (maybe safe, maybe not?) 
+# range in brackets can be changed when range of players health is known
+
+def escape_likelyhood(chance_of_escape):
+	
+	random_chance = random.uniform(1,100)
+	
+	if (random_chance < chance_of_escape):
+		return True
+	else:
+		return False
+
+# function that will move player to another room if the chance is in their favor otherwise they dont move room and a motivational message 
+# tells them to stand and fight
