@@ -1,30 +1,25 @@
 item_1 = {
-    "name": " The first item",
-    "id": "Item 1",
-    "description": "A lovely 1st item",
-    "cost": 50
+    "name": " Strength Upgrade",
+    "id": "Strength Upgrade",
+    "description": "A +5 to strength upgrade",
+    "cost": 25
     }
 item_2 = {
-    "name": " The second item",
-    "id": "Item 2",
-    "description": "A lovely 2nd item",
-    "cost": 10
+    "name": " Defence Upgrade",
+    "id": "Defence Upgrade",
+    "description": "A +5 to defence upgrade",
+    "cost": 25
     }
 item_3 = {
-    "name": " The third item",
-    "id": "Item 3",
-    "description": "A lovely 3rd item",
-    "cost": 133
+    "name": " Health Upgrade",
+    "id": "Health Upgrade",
+    "description": "A +10 to health upgrade",
+    "cost": 25
     }
 item_4 = {
-    "name": " The fourth item",
-    "id": "Item 4",
-    "description": "A lovely 4th item",
-    "cost": 102
+    "name": " All Stats Upgrade",
+    "id": "All Stats Upgrade",
+    "description": "All stats upgrade BEST VALUE!",
+    "cost": 60
     }
-item_5 = {
-    "name": " The fourth item",
-    "id": "Item 5",
-    "description": "A lovely 5th item",
-    "cost": 12
-    }
+

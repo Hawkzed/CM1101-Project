@@ -11,7 +11,8 @@ p_basic = {
 "description":"""You encountered a Space Pirate.
 From your knowledge, Space Pirates have a lot of health 
 as they don't have many real body parts since most were replaced 
-because of previous injuries. However they don't hit hard."""
+because of previous injuries or combat madifications. 
+Their lack of humanity makes them sluggish and as such they don't hit hard."""
 }
 
 p_superior = {
