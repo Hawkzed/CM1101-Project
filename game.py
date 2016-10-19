@@ -229,7 +229,7 @@ FOR LIFE AND ETERNITY. \n
 	# Display game status (room description, inventory etc.)
 		print_room(current_room)
 		input("continue...\n")
-		if current_room["type"] == "enemy":
+		if current_room["type"] == "enemy" or current_room["type"] == "boss":
 			battle()
 			if player_stats["health"] < 1:
 				retire()

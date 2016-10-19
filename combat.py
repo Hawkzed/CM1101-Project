@@ -27,7 +27,8 @@ def battle():
 	elif rand < 70:
 		enemy_stats = enemy_pirate
 		enemy_stats["health"] = 80
-	elif current_room["type"] == "boss":
+		
+	if current_room["type"] == "boss":
 		enemy_stats = enemy_pirate_ravager
 		enemy_stats["health"] = 200
 	
