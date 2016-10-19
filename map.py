@@ -195,7 +195,8 @@ rooms = {
 
 descriptions = {
     # Enemy rooms
-   """The door begrudgingly swings open and you
+    1:"""
+    The door begrudgingly swings open and you
     walk in, making sure to stay silent.
     It's dark and a shiver runs down your spine
     as you spy someone, or something, standing
@@ -266,7 +267,7 @@ descriptions = {
     it has awoken, it is fresh, 
     unfortunately it is HUNGRY! """,
 
-    # surviver rooms
+    # survivrr rooms
 
     12: """
     The carbon fibre roof has collapsed, 
