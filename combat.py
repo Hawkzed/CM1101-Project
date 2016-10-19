@@ -26,19 +26,23 @@ def battle():
 	while player_stats["health"] > 0 and enemy_stats["health"] > 0:
 
 		print("What would you like to do? You can:")
-		print("Attack")
-		print("Escape")
+		print("1. Attack")
+		print("2. Attack 5 times")
+		print("3. Attack until dead")
 		x = input("")
 		x = normalise_inputs(x)
-		if x == "attack" or "Attack":
+		if x == "attack":
 			compute_turn_damage()
-		elif x == "escape" or "run":
-			escapeChance = escape_dependent_on_health(player_stats["health"])
-			if escape_likelyhood(escapeChance) == True:
-			#print("code to move room")/ current_room = move(exits, direction) # if it stays the same as that in the template
-				print("You escaped!")
-			elif escape_likelyhood() == False:
-				print("you must STAND and FIGHT!") # or print nothing and continue fighting
+		elif x == "attack 5 times":
+			for _ in " " * 5:
+				compute_turn_damage()
+				if player_stats["health"] > 0 or enemy_stats["health"] > 0:
+					break
+		elif x == "attack until dead":
+			while player_stats["health"] > 0 and enemy_stats["health"] > 0:
+				compute_turn_damage() 
+
+
 	if enemy_stats["health"] < 1:
 
 		player_stats["gold"] + xpPoints
