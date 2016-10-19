@@ -59,6 +59,7 @@ def print_menu(exits, room_items, inventory, room_stall):
 			print("BUY " + str(item["id"].upper()) + " to buy" + str(item["name"]) + " for " + str(item["cost"])
                   + " credits.")
 		print("BUY RETIRE to retire from the game!")
+		print("SHOW STATS to check your statistics")
 		print("You have " + str(player_stats["credits"]) + " credits available.")
 	for item in room_items:
 		print("TAKE " + str(item["id"].upper() + " to take " + str(item["name"])))
@@ -162,7 +163,9 @@ def execute_buy(user_input):
     elif user_input == "retire":
     	retire()
 
-
+def execute_show():
+	print("Your Statistics: ")
+	print_player()
 
 #  prints the menu of actions using print_menu() function.
 #It then prompts the player to type an action. (add actions)
@@ -214,6 +217,11 @@ def execute_command(command):
 			execute_buy(command[1])
 		else:
 			print("Buy what?")
+	elif command[0] == "show":
+		if len(command) > 1:
+			execute_show()
+		else:
+			print("Show what?")
 
 def print_player():
 	for x in player_stats:
