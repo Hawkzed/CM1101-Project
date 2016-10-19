@@ -116,25 +116,25 @@ def execute_take(item_id):
 
 def execute_buy(user_input):
     if user_input == "1":
-        if player_stats["credits"] > item_1["cost"]:
+        if player_stats["credits"] >= item_1["cost"]:
             inventory.append(item_1)
             player_stats["credits"] = int(player_stats["credits"]) - int(item_1["cost"])
         else:
             print("You do not have enough credits")
     elif user_input == "2":
-        if player_stats["credits"] > item_2["cost"]:
+        if player_stats["credits"] >= item_2["cost"]:
             inventory.append(item_2)
             player_stats["credits"] = int(player_stats["credits"]) - int(item_2["cost"])
         else:
             print("You do not have enough credits")
     elif user_input == "3":
-        if player_stats["credits"] > item_3["cost"]:
+        if player_stats["credits"] >= item_3["cost"]:
             inventory.append(item_3)
             player_stats["credits"] = int(player_stats["credits"]) - int(item_3["cost"])
         else:
             print("You do not have enough credits")
     elif user_input == "4":
-        if player_stats["credits"] > item_4["cost"]:
+        if player_stats["credits"] >= item_4["cost"]:
             inventory.append(item_4)
             player_stats["credits"] = int(player_stats["credits"]) - int(item_4["cost"])
         else:
