@@ -83,15 +83,15 @@ def execute_go(direction):
 
 		if current_room["name"] != "Shop":
 			if current_room["type"] == "enemy":
-				i = random.randrange(1,4)
+				i = random.randrange(1,3)
 			elif current_room["type"] == "empty":
-				i = random.randrange(4,7)
+				i = random.randrange(4,6)
 			elif current_room["type"] == "loot":
-				i = random.randrange(8,10)
+				i = random.randrange(7,9)
 			elif current_room["type"] == "boss":
-				i = 11
+				i = 10
 			elif current_room["type"] == "civil":
-				i = random.randrange(12,14)
+				i = random.randrange(11,12)
 
 			current_room["description"] = descriptions[i]
 	else:
