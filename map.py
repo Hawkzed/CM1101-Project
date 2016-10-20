@@ -68,7 +68,7 @@ room_7 = {
 }
 room_8 = {
     "name": "Room 8",
-    "enemy": "enemy",
+    "type": "enemy",
 	"stall":[],
     "description":"There is an enemy here.",
 	"items": [],
