@@ -102,13 +102,13 @@ def execute_go(direction):
 		if line["id"] == "1":
 			player_stats["strength"] += 5
 			inventory.remove(line)
-		elif value["id"] == "2":
+		elif line["id"] == "2":
 			player_stats["defence"] += 5
 			inventory.remove(line)
-		elif value["id"] == "3":
+		elif line["id"] == "3":
 			player_stats["health"] += 25
 			inventory.remove(line)
-		elif value["id"] == "4":
+		elif line["id"] == "4":
 			player_stats["strength"] += 5
 			player_stats["defence"] += 5
 			player_stats["health"] += 50
